@@ -1,0 +1,53 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Perfil y Otros</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+    <h1>Perfil del Guardia
+      <ion-avatar>
+        <img src={{perfil.picture.medium}}>
+      </ion-avatar>
+    </h1>
+
+    <ion-card-header>
+      <ion-card-title>{{ perfil.name.first }} {{ perfil.name.last }}</ion-card-title>
+      <ion-card-subtitle>{{ perfil.email }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Género: {{ perfil.gender }}</p>
+      <p>Teléfono: {{ perfil.phone }}</p>
+      <p>Ciudad: {{ perfil.location.city }}, {{ perfil.location.country }}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-content>
+
+    <app-menu-soporte />
+    
+    <app-menu-preguntas-f />
+
+
+  </ion-content>
+
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-img src="../../../assets/Cool Text - Security and Action 466186452906631.png"></ion-img>
+
+  </ion-content>
+</div>

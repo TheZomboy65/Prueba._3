@@ -1,0 +1,69 @@
+<ion-content color="light">
+
+  <ion-content class="ion-padding">
+    <ion-button expand="block" (click)="setOpen(true)">Soporte</ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Soporte</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+        <ion-list>
+          <ion-item href="tel:+56935847985" detail>
+
+            <ion-icon slot="start" name="call-outline"></ion-icon>
+            <ion-label>Llamar al soporte</ion-label>
+
+          </ion-item>
+          <ion-item href="security.support@gmail.com" detail>
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-label>Enviar un correo</ion-label>
+          </ion-item>
+         
+        </ion-list>
+
+        <ion-button expand="block" class="botondesk" (click)="toggleFormulario()">
+          {{ mostrarFormulario ? 'Hacer Reporte' : 'Cerrar reporte' }}
+        </ion-button>
+
+        <div *ngIf="mostrarFormulario">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Reporte de problema</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label position="stacked">Asunto</ion-label>
+                <ion-input placeholder="Ingresa tu asunto"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked">Descripción</ion-label>
+                <ion-textarea placeholder="Describe tu problema"></ion-textarea>
+              </ion-item>
+    
+              <ion-button expand="block" id="open-toast">
+              <ion-toast trigger="open-toast"  message="Reporte enviado correctamente a Soporte" [duration]="2000"></ion-toast>
+                
+              Enviar</ion-button>
+      
+            </ion-card-content>
+          </ion-card>
+        </div>
+       
+        <ion-button   color="success" (click)="abrirChatWhatsApp()">
+          <ion-icon class="logo-whatsapp" name="logo-whatsapp"></ion-icon>
+          chatea con nosotros aqui!
+        </ion-button>
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
+
+
+

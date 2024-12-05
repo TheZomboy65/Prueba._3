@@ -1,0 +1,46 @@
+<ion-header>
+  
+  <ion-toolbar>
+    
+    <ion-title>Inicio de Turno</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-card>
+  
+  <ion-card-header>
+    <ion-card-title>{{ShiftStatus}}</ion-card-title>
+    <ion-card-subtitle>Turno de Guardia</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <h1>{{ hours }}:{{ minutes }}:{{ seconds }}</h1>
+  </ion-card-content>
+</ion-card>
+
+
+
+<ion-content class="ion-padding">
+
+  <!-- Botones para iniciar y finalizar el turno -->
+  <ion-button expand="block" color="success" (click)="startShift()" [disabled]="isRunning">
+    Iniciar Turno
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="endShift()" [disabled]="!isRunning">
+    Finalizar Turno
+  </ion-button>
+
+  <ion-list>
+    <h1>Registro de turnos</h1>
+    <ion-item *ngFor="let record of shiftRecords">
+      <ion-label>
+        <h3>Fecha: {{ record.date }}</h3>
+        <p>Hora de Inicio {{ record.startTime }}</p>
+        <p>Hora de Fin: {{ record.endTime }}</p>
+        <p>Duración: {{ record.duration }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

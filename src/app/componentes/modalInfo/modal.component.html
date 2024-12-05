@@ -1,0 +1,53 @@
+
+<ion-content class="ion-padding">
+ <ion-button style="padding-top: 40%;" expand="block" (click)="setOpen(true)">Crear Nuevo Reporte</ion-button>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Reporte</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-card-content>
+         <h1> 
+          <div>Fecha Actual:   {{ fechaLocal }}  </div>
+          <div>Hora Actual:  {{horaLocal}}</div>
+          <label >Novedades:</label>
+          <ion-input  
+          fill="solid"
+          ></ion-input>
+          <label>Problemas:</label>
+          <ion-input  
+          fill="solid"
+          ></ion-input>
+          <div>Enviar foto:         
+           <ion-button   (click)="tomarFoto()">
+            Tomar Foto
+          </ion-button>
+            
+          </div>
+        </h1>
+        </ion-card-content>
+
+
+          <div *ngIf="photo" class="image-preview">
+          <img [src]="photo" alt="Foto capturada" />
+        </div>
+
+        <ion-button expand="block" (click)="presentToast('bottom')">Enviar Reporte</ion-button>
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+
+<ion-row>
+  <ion-col class="ion-text-start">
+    
+  </ion-col>
+
+</ion-row>

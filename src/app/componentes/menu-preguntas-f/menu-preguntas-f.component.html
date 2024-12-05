@@ -1,0 +1,49 @@
+
+  <ion-content class="ion-padding">
+    <ion-button class="colors" expand="block" (click)="setOpen(true)">Preguntas Frecuentes</ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Preguntas Frecuentes</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+          <ion-accordion-group >
+            <ion-accordion value="pregunta1">
+              <ion-item slot="header">
+                <ion-label>¿como puedo Restablecer la contraseña?</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Si se te olvida la contraseña, la unica forma de restablecerla es dirigiendose a el area tecnica de la empresa y con su cedula de identidad le podrán restablecer su contraseña por temas de seguridad.
+              </div>
+            </ion-accordion>
+        
+            <ion-accordion value="pregunta2">
+              <ion-item slot="header">
+                <ion-label>¿como puedo reportar un problema?</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                En la seccion de "Soporte" hay una opcion "Reportar problema". Recuerde siempre añadir un motivo claro y una descripcion de el dicho problema para brindar una solucion mas eficaz y pronta.
+              </div>
+            </ion-accordion>
+        
+            <ion-accordion value="pregunta3">
+              <ion-item slot="header">
+                <ion-label>¿porqué la Hora de la App y la de mi celular no son iguales??</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Recuerda siempre mantener tu celular con la hora en Automatico, asi se evitarán problemas y posible conflictos entre la App y el sistema de hora de su celular
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
